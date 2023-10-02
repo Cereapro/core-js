@@ -2268,9 +2268,6 @@ export const data = {
     deno: '1.43',
   },
   // TODO: Remove from `core-js@4`
-  'esnext.math.iaddh': {
-  },
-  // TODO: Remove from `core-js@4`
   'esnext.math.imulh': {
   },
   // TODO: Remove from `core-js@4`
