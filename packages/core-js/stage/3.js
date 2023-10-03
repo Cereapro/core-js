@@ -9,7 +9,6 @@ require('../proposals/float16');
 require('../proposals/iterator-helpers-stage-3-2');
 require('../proposals/json-parse-with-source');
 // TODO: Obsolete versions, remove from `core-js@4`
-require('../proposals/array-grouping-stage-3-2');
 require('../proposals/change-array-by-copy');
 require('../proposals/iterator-helpers-stage-3');
 
