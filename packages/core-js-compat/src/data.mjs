@@ -2131,12 +2131,8 @@ export const data = {
   },
   'esnext.number.from-string': {
   },
-  // TODO: Remove from `core-js@4`
-  'esnext.object.group-by': null,
-  // TODO: Remove from `core-js@4`
   'esnext.promise.try': {
   },
-  // TODO: Remove from `core-js@4`
   'esnext.promise.with-resolvers': null,
   'esnext.regexp.escape': {
   },
@@ -2431,7 +2427,6 @@ export const renamed = new Map([
   ['esnext.array-buffer.transfer', 'es.array-buffer.transfer'],
   ['esnext.array-buffer.transfer-to-fixed-length', 'es.array-buffer.transfer-to-fixed-length'],
   ['esnext.map.group-by', 'es.map.group-by'],
-  ['esnext.object.group-by', 'es.object.group-by'],
   ['esnext.promise.with-resolvers', 'es.promise.with-resolvers'],
 ]);
 
