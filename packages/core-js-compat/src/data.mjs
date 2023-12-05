@@ -2127,8 +2127,6 @@ export const data = {
   },
   'esnext.math.sum-precise': {
   },
-  'esnext.number.from-string': {
-  },
   'esnext.promise.try': {
   },
   'esnext.regexp.escape': {

@@ -1736,9 +1736,6 @@ GLOBAL.tests = {
   'esnext.math.sum-precise': function () {
     return Math.sumPrecise;
   },
-  'esnext.number.from-string': function () {
-    return Number.fromString;
-  },
   'esnext.promise.try': function () {
     return Promise.try;
   },
