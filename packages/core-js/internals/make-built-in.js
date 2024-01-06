@@ -19,7 +19,7 @@ var TEMPLATE = $String($String).split('String');
 
 var makeBuiltIn = module.exports = function (value, name, options) {
   if ($String(name).slice(0, 7) === 'Symbol(') {
-    name = '[' + $String(name).replace(/^Symbol\(([^)]*)\)/.*$, '$1') + ']';
+    name = '[' + $String(name).replace(/^Symbol\(([^)]*)\).*$/, '$1') + ']';
   }
   if (options && options.getter) name = 'get ' + name;
   if (options && options.setter) name = 'set ' + name;
