@@ -34,13 +34,13 @@ const MapWithPrototype = [
 const SetWithPrototype = [
   'es.set.constructor',
   'es.set.species',
-  'esnext.set.difference',
-  'esnext.set.intersection',
-  'esnext.set.is-disjoint-from',
-  'esnext.set.is-subset-of',
-  'esnext.set.is-superset-of',
-  'esnext.set.symmetric-difference',
-  'esnext.set.union',
+  'es.set.difference',
+  'es.set.intersection',
+  'es.set.is-disjoint-from',
+  'es.set.is-subset-of',
+  'es.set.is-superset-of',
+  'es.set.symmetric-difference',
+  'es.set.union',
 ];
 
 const WeakMapWithPrototype = [
@@ -910,6 +910,10 @@ export const features = {
     modules: ['es.math.sinh'],
     template: $static({ namespace: 'Math', method: 'sinh' }),
   },
+  'math/sum-precise': {
+    modules: ['esnext.math.sum-precise'],
+    template: $static({ namespace: 'Math', method: 'sumPrecise' }),
+  },
   'math/tanh': {
     modules: ['es.math.tanh'],
     template: $static({ namespace: 'Math', method: 'tanh' }),
@@ -1169,6 +1173,10 @@ export const features = {
     modules: ['es.promise.resolve'],
     template: $staticWithContext({ namespace: 'Promise', method: 'resolve' }),
   },
+  'promise/try': {
+    modules: ['esnext.promise.try'],
+    template: $staticWithContext({ namespace: 'Promise', method: 'try' }),
+  },
   'promise/with-resolvers': {
     modules: ['es.promise.with-resolvers'],
     template: $staticWithContext({ namespace: 'Promise', method: 'withResolvers' }),
@@ -1286,11 +1294,11 @@ export const features = {
     template: $namespace({ name: 'Set' }),
   },
   'set/difference': {
-    modules: ['esnext.set.difference'],
+    modules: ['es.set.difference'],
     template: $prototype({ namespace: 'Set', method: 'difference' }),
   },
   'set/virtual/difference': {
-    modules: ['esnext.set.difference'],
+    modules: ['es.set.difference'],
     template: $virtual({ namespace: 'Set', method: 'difference' }),
   },
   'set/from': {
@@ -1299,35 +1307,35 @@ export const features = {
     template: $static({ namespace: 'Set', method: 'from' }),
   },
   'set/intersection': {
-    modules: ['esnext.set.intersection'],
+    modules: ['es.set.intersection'],
     template: $prototype({ namespace: 'Set', method: 'intersection' }),
   },
   'set/virtual/intersection': {
-    modules: ['esnext.set.intersection'],
+    modules: ['es.set.intersection'],
     template: $virtual({ namespace: 'Set', method: 'intersection' }),
   },
   'set/is-disjoint-from': {
-    modules: ['esnext.set.is-disjoint-from'],
+    modules: ['es.set.is-disjoint-from'],
     template: $prototype({ namespace: 'Set', method: 'isDisjointFrom' }),
   },
   'set/virtual/is-disjoint-from': {
-    modules: ['esnext.set.is-disjoint-from'],
+    modules: ['es.set.is-disjoint-from'],
     template: $virtual({ namespace: 'Set', method: 'isDisjointFrom' }),
   },
   'set/is-subset-of': {
-    modules: ['esnext.set.is-subset-of'],
+    modules: ['es.set.is-subset-of'],
     template: $prototype({ namespace: 'Set', method: 'isSubsetOf' }),
   },
   'set/virtual/is-subset-of': {
-    modules: ['esnext.set.is-subset-of'],
+    modules: ['es.set.is-subset-of'],
     template: $virtual({ namespace: 'Set', method: 'isSubsetOf' }),
   },
   'set/is-superset-of': {
-    modules: ['esnext.set.is-superset-of'],
+    modules: ['es.set.is-superset-of'],
     template: $prototype({ namespace: 'Set', method: 'isSupersetOf' }),
   },
   'set/virtual/is-superset-of': {
-    modules: ['esnext.set.is-superset-of'],
+    modules: ['es.set.is-superset-of'],
     template: $virtual({ namespace: 'Set', method: 'isSupersetOf' }),
   },
   'set/of': {
@@ -1336,19 +1344,19 @@ export const features = {
     template: $static({ namespace: 'Set', method: 'of' }),
   },
   'set/symmetric-difference': {
-    modules: ['esnext.set.symmetric-difference'],
+    modules: ['es.set.symmetric-difference'],
     template: $prototype({ namespace: 'Set', method: 'symmetricDifference' }),
   },
   'set/virtual/symmetric-difference': {
-    modules: ['esnext.set.symmetric-difference'],
+    modules: ['es.set.symmetric-difference'],
     template: $virtual({ namespace: 'Set', method: 'symmetricDifference' }),
   },
   'set/union': {
-    modules: ['esnext.set.union'],
+    modules: ['es.set.union'],
     template: $prototype({ namespace: 'Set', method: 'union' }),
   },
   'set/virtual/union': {
-    modules: ['esnext.set.union'],
+    modules: ['es.set.union'],
     template: $virtual({ namespace: 'Set', method: 'union' }),
   },
   'string/index': {
@@ -1675,6 +1683,10 @@ export const features = {
     modules: ['es.symbol.async-iterator'],
     template: $static({ namespace: 'Symbol', method: 'asyncIterator' }),
   },
+  'symbol/custom-matcher': {
+    modules: ['esnext.symbol.custom-matcher'],
+    template: $static({ namespace: 'Symbol', method: 'customMatcher' }),
+  },
   'symbol/description': {
     modules: ['es.symbol.description'],
     template: $justImport,
@@ -1718,10 +1730,6 @@ export const features = {
   'symbol/match-all': {
     modules: ['es.symbol.match-all'],
     template: $static({ namespace: 'Symbol', method: 'matchAll' }),
-  },
-  'symbol/matcher': {
-    modules: ['esnext.symbol.matcher'],
-    template: $static({ namespace: 'Symbol', method: 'matcher' }),
   },
   'symbol/metadata': {
     modules: ['esnext.symbol.metadata', 'esnext.function.metadata'],
@@ -1962,6 +1970,10 @@ export const features = {
   'url/can-parse': {
     modules: ['web.url.can-parse'],
     template: $static({ namespace: 'URL', method: 'canParse' }),
+  },
+  'url/parse': {
+    modules: ['web.url.parse'],
+    template: $static({ namespace: 'URL', method: 'parse' }),
   },
   'url/to-json': { // <- ???
     modules: ['web.url.to-json'],
@@ -2339,7 +2351,7 @@ export const proposals = {
   },
   // https://github.com/tc39/proposal-arraybuffer-base64
   'array-buffer-base64': {
-    stage: 2,
+    stage: 3,
     modules: [
       'esnext.uint8-array.from-base64',
       'esnext.uint8-array.from-hex',
@@ -2513,6 +2525,13 @@ export const proposals = {
       'esnext.symbol.dispose',
     ],
   },
+  // https://github.com/tc39/proposal-extractors
+  extractors: {
+    stage: 1,
+    modules: [
+      'esnext.symbol.custom-matcher',
+    ],
+  },
   // https://github.com/tc39/proposal-float16array
   float16: {
     stage: 3,
@@ -2580,6 +2599,13 @@ export const proposals = {
       'esnext.weak-map.emplace',
     ],
   },
+  // https://github.com/tc39/proposal-math-sum
+  'math-sum': {
+    stage: 2.7,
+    modules: [
+      'esnext.math.sum-precise',
+    ],
+  },
   // https://github.com/tc39/proposal-object-from-entries
   'object-from-entries': {
     stage: 4,
@@ -2606,7 +2632,7 @@ export const proposals = {
   'pattern-matching': {
     stage: 1,
     modules: [
-      'esnext.symbol.matcher',
+      'esnext.symbol.custom-matcher',
     ],
   },
   // https://github.com/tc39/proposal-promise-allSettled
@@ -2629,6 +2655,13 @@ export const proposals = {
     stage: 4,
     modules: [
       'es.promise.finally',
+    ],
+  },
+  // https://github.com/tc39/proposal-promise-try
+  'promise-try': {
+    stage: 2.7,
+    modules: [
+      'esnext.promise.try',
     ],
   },
   // https://github.com/tc39/proposal-promise-with-resolvers
@@ -2675,15 +2708,15 @@ export const proposals = {
   },
   // https://github.com/tc39/proposal-set-methods
   'set-methods': {
-    stage: 3,
+    stage: 4,
     modules: [
-      'esnext.set.difference',
-      'esnext.set.intersection',
-      'esnext.set.is-disjoint-from',
-      'esnext.set.is-subset-of',
-      'esnext.set.is-superset-of',
-      'esnext.set.symmetric-difference',
-      'esnext.set.union',
+      'es.set.difference',
+      'es.set.intersection',
+      'es.set.is-disjoint-from',
+      'es.set.is-subset-of',
+      'es.set.is-superset-of',
+      'es.set.symmetric-difference',
+      'es.set.union',
     ],
   },
   // https://github.com/bathos/proposal-string-cooked
