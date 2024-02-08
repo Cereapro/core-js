@@ -1,9 +1,9 @@
 'use strict';
 var $ = require('../internals/export');
 var apply = require('../internals/function-apply');
+var aCallable = require('../internals/a-callable');
 var slice = require('../internals/array-slice');
 var newPromiseCapabilityModule = require('../internals/new-promise-capability');
-var aCallable = require('../internals/a-callable');
 var perform = require('../internals/perform');
 
 // `Promise.try` method

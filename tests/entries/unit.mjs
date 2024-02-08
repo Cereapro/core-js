@@ -637,6 +637,7 @@ for (PATH of ['@core-js/pure', 'core-js']) {
     const Set = load(NS, 'set');
     const WeakMap = load(NS, 'weak-map');
     const WeakSet = load(NS, 'weak-set');
+    const Promise = load(NS, 'promise');
     ok(typeof load(NS, 'array/filter-reject') == 'function');
     ok(typeof load(NS, 'array/is-template-object') == 'function');
     ok(typeof load(NS, 'array/unique-by') == 'function');
@@ -665,7 +666,7 @@ for (PATH of ['@core-js/pure', 'core-js']) {
     ok(load(NS, 'map/from')([[1, 2], [3, 4]]) instanceof Map);
     ok(load(NS, 'map/of')([1, 2], [3, 4]) instanceof Map);
     ok(load(NS, 'math/sum-precise')([1, 2, 3]) === 6);
-    ok(load(NS, 'promise/try')(() => 42) instanceof load(NS, 'promise'));
+    ok(load(NS, 'promise/try')(() => 42) instanceof Promise);
     ok(load(NS, 'regexp/escape')('10$') === '\\x310\\x24');
     ok(load(NS, 'set/from')([1, 2, 3, 2, 1]) instanceof Set);
     ok(load(NS, 'set/of')(1, 2, 3, 2, 1) instanceof Set);

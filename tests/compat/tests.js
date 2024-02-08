@@ -1643,9 +1643,9 @@ GLOBAL.tests = {
   'esnext.math.sum-precise': function () {
     return Math.sumPrecise;
   },
-  'esnext.promise.try': function () {
+  'esnext.promise.try': [PROMISES_SUPPORT, function () {
     return Promise.try;
-  },
+  }],
   'esnext.regexp.escape': function () {
     return RegExp.escape;
   },
